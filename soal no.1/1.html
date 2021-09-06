@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soal No.1</title>
+</head>
+<body>
+    <section class="login-from-wrap">
+    <h1>pencetakan uang</h1>
+    <br>
+    <form action="#" class="login-form">
+            <label>
+                <input type="number" name="uang1" id="uang1" required placeholder="masukan harga beli">
+                <input type="number" name="uang2" id="uang2" required placeholder="Uang yang diberikan">
+                <input type="button"  onclick="cetakUang()" value="Cetak">
+            </label>
+            <div class="keterangan" id="result" style="margin-top: 10px;">Uang yang perlu dikembalikan :</div>
+    </form>
+    </section>
+</body>
+    <script type="text/javascript">
+            function cetakUang(){
+                var a = document.getElementById('uang1').value;
+                var b = document.getElementById('uang2').value;
+                var c = b-a;
+                var k, k1, k2, k3, k4, k5;
+
+               
+                k = c / 20000;
+                if (k>0) {
+                    c = c % 20000;
+                }
+                k1 = c / 10000;
+                if (k1>0) {
+                    c = c % 10000;
+                }
+                k2 = c / 5000;
+                if (k2>0) {
+                    c = c % 5000;
+                }
+                k3 = c / 2000;
+                if (k3>0) {
+                    c = c % 2000;
+                }
+                k4 = c / 1000;
+                if (k4>0) {
+                    c = c % 1000;
+                }
+                k5 = c / 500;
+                if (k5>0) {
+                    c = c % 500;
+                }
+
+                console.log(c+", "+k+", "+k1+", "+k2+", "+k3+", "+k4+", "+k5);
+
+                var cetakDiv = document.getElementById('result');
+                cetakDiv.innerHTML = 'uang yang perlu dikembalikan : <br>'+
+                "-"+pilihK(k)+'20000 <br>'+
+                "-"+pilihK(k1)+'10000<br>'+
+                "-"+pilihK(k2)+'5000 <br>'+
+                "-"+pilihK(k3)+'2000 <br>'+
+                "-"+pilihK(k4)+'1000 <br>'+
+                "-"+pilihK(k5)+'500';
+                
+            }
+            function pilihK(x){
+                i = Math.floor(x);
+                var angka = new Array('0','1','2','3','4','5','6');
+                var kata = new Array('Nol lembar','Selembar','Dua lembar','Tiga lembar','Empat lembar','Lima lembar','enam lembar');
+                var bilang=kata[i];
+                return bilang;
+            }
+    </script>
+
+</html>
