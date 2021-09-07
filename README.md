@@ -1,4 +1,8 @@
 # tes_bacth26
+
+nama = agung dwika rudiyanto
+kelas = fullstak
+
 tes menggunakan bahasa pemograman js dan php
 
 untuk nomer 4 menggunakan html dan bahasa pemograan php dan boostrap
